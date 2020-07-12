@@ -4,11 +4,13 @@ import com.example.hotmarttest.BuildConfig.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
+import okhttp3.logging.HttpLoggingInterceptor.Level.HEADERS
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
-import java.util.concurrent.TimeUnit
+import java.util.concurrent.TimeUnit.MILLISECONDS
 
 
 class Service {
@@ -26,21 +28,12 @@ class Service {
          * Log interceptor (just for debug)
          */
         val interceptor = HttpLoggingInterceptor()
-        interceptor.level = HttpLoggingInterceptor.Level.HEADERS
-        interceptor.level = HttpLoggingInterceptor.Level.BODY
+        interceptor.level = HEADERS
+        interceptor.level = BODY
         val builder = OkHttpClient.Builder()
-            .connectTimeout(
-                CONNECTION_TIME_OUT,
-                TimeUnit.MILLISECONDS
-            )
-            .readTimeout(
-                TIME_OUT,
-                TimeUnit.MILLISECONDS
-            )
-            .writeTimeout(
-                TIME_OUT,
-                TimeUnit.MILLISECONDS
-            )
+            .connectTimeout(CONNECTION_TIME_OUT, MILLISECONDS)
+            .readTimeout(TIME_OUT, MILLISECONDS)
+            .writeTimeout(TIME_OUT, MILLISECONDS)
             .addInterceptor(interceptor)
             .addInterceptor { chain ->
                 val original: Request = chain.request()
@@ -67,8 +60,7 @@ class Service {
 
     private val headers: HashMap<String, String?>
         get() {
-            val header =
-                HashMap<String, String?>()
+            val header = HashMap<String, String?>()
             header["Content-Type"] = "application/json"
             return header
         }
@@ -77,4 +69,5 @@ class Service {
         private const val TIME_OUT = 200L * 1000
         private const val CONNECTION_TIME_OUT = 200L * 1000
     }
+
 }
