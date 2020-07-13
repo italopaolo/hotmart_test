@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">@color/topaz</color>
+    <color name="colorPrimaryDark">@color/black_25</color>
+    <color name="colorAccent">@color/topaz</color>
+
+    <color name="black">#333333</color>
+    <color name="black_25">#40000000</color>
+    <color name="topaz">#14adb8</color>
+    <color name="white">#ffffff</color>
+    <color name="brownish_grey">#666666</color>
 </resources>

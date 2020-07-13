@@ -7,4 +7,45 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Text16WhiteBold">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text16TopazBold" parent="Text16WhiteBold">
+        <item name="android:textColor">@color/topaz</item>
+    </style>
+
+    <style name="Text14Black">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text14BrownishGrey" parent="Text14Black">
+        <item name="android:textColor">@color/brownish_grey</item>
+    </style>
+
+    <style name="Text16Black" parent="Text14Black">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text14White">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text18White" parent="Text14White">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Text32White" parent="Text14White">
+        <item name="android:textSize">32sp</item>
+    </style>
+
 </resources>
